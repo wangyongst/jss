@@ -30,7 +30,7 @@ build:
 
     - alianza/maven:
         name: Compile, test and deploy jar to artifactory
-        goals: -Dmaven.test.failure.ignore=false -DdeployAtEnd deploy
+        goals: -Dmaven.test.failure.ignore=false -DaltDeploymentRepository=releases::default::https://alianza.artifactoryonline.com/alianza/libs-release -DdeployAtEnd deploy
         only_on_branch: master
 
   after-steps:
