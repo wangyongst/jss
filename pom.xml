@@ -125,12 +125,13 @@
                     </execution>
                 </executions>
             </plugin>
-            
+
         </plugins>
     </build>
 
     <reporting>
         <plugins>
+
             <plugin>
 				        <groupId>org.codehaus.mojo</groupId>
 				        <artifactId>findbugs-maven-plugin</artifactId>
@@ -145,16 +146,16 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven-javadoc-plugin.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
             </plugin>
 
+            <!-- Can't use until the wercker base java 8 image includes javadoc executable -->
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </plugin>-->
         </plugins>
     </reporting>
 
