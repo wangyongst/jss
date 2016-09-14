@@ -5,7 +5,6 @@ box:
   tag: latest
   registry: $DOCKER_REGISTRY
 
-
 build:
   steps:
     - alianza/maven:
@@ -25,6 +24,15 @@ build:
         name: Compile, test and deploy jar to artifactory
         goals: -Dmaven.test.failure.ignore=false -DaltDeploymentRepository=releases::default::https://alianza.artifactoryonline.com/alianza/libs-release -DdeployAtEnd test jacoco:report coveralls:report deploy
         only_on_branch: master
+
+    - alianza/maven:
+        name: Generate reports
+        goals: site 
+
+    - script:
+        name: Upload reports
+        code: |
+          push_reports
 
   after-steps:
     - alianza/slack-notifier:

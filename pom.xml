@@ -27,6 +27,10 @@
         <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
         <maven-coveralls-plugin.version>4.2.0</maven-coveralls-plugin.version>
         <jacoco.version>0.7.7.201606060606</jacoco.version>
+        <maven-findbugs-plugin.version>3.0.1</maven-findbugs-plugin.version>
+        <maven-pmd-plugin.version>3.6</maven-pmd-plugin.version>
+        <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+
         <jain-sip.version>1.2.1.4</jain-sip.version>
         <junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
         <junit.platform.version>1.0.0-M2</junit.platform.version>
@@ -121,9 +125,37 @@
                     </execution>
                 </executions>
             </plugin>
-
+            
         </plugins>
     </build>
 
+    <reporting>
+        <plugins>
+            <plugin>
+				        <groupId>org.codehaus.mojo</groupId>
+				        <artifactId>findbugs-maven-plugin</artifactId>
+                <version>${maven-findbugs-plugin.version}</version>
+			      </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>${maven-pmd-plugin.version}</version>
+			      </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${maven-javadoc-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+        </plugins>
+    </reporting>
 
 </project>
