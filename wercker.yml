@@ -8,13 +8,6 @@ box:
 
 build:
   steps:
-    - alianza/template-version-notifier:
-        template_version: 1.0.0
-        template_url: $TEMPLATE_URL
-        template_auth: $TEMPLATE_AUTH
-        slack_url: $SLACK_URL
-        slack_channel: $SLACK_CHANNEL
-
     - alianza/maven:
         name: Compile and Test
         goals: -Dmaven.test.failure.ignore=false test
@@ -30,7 +23,7 @@ build:
 
     - alianza/maven:
         name: Compile, test and deploy jar to artifactory
-        goals: -Dmaven.test.failure.ignore=false -DaltDeploymentRepository=releases::default::https://alianza.artifactoryonline.com/alianza/libs-release -DdeployAtEnd deploy
+        goals: -Dmaven.test.failure.ignore=false -DaltDeploymentRepository=releases::default::https://alianza.artifactoryonline.com/alianza/libs-release -DdeployAtEnd jacoco:report coveralls:report deploy
         only_on_branch: master
 
   after-steps:
@@ -40,4 +33,12 @@ build:
         username: wercker
         icon_emoji: ':werker:'
         notify_on: failed
+
+    - alianza/template-version-notifier:
+        template_version: 1.0.0
+        template_url: $TEMPLATE_URL
+        template_auth: $TEMPLATE_AUTH
+        slack_url: $SLACK_URL
+        slack_channel: $SLACK_CHANNEL
+
 

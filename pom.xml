@@ -23,6 +23,8 @@
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
+        <maven-coveralls-plugin.version>4.2.0</maven-coveralls-plugin.version>
+        <jacoco.version>0.7.7.201606060606</jacoco.version>
         <jain-sip.version>1.2.1.4</jain-sip.version>
         <junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
         <junit.platform.version>1.0.0-M2</junit.platform.version>
@@ -94,6 +96,28 @@
                         <version>${junit.platform.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.2.0</version>
+                <configuration>
+                    <repoToken>${env.COVERALLS_TOKEN}</repoToken>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
