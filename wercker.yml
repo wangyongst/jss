@@ -32,7 +32,7 @@ build:
     - script:
         name: Upload reports
         code: |
-          push_reports
+          ./push_reports
 
   after-steps:
     - alianza/slack-notifier:
