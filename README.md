@@ -4,6 +4,10 @@ Java Sip Softphone
 [![Coverage Status](https://coveralls.io/repos/github/alianza-dev/java-sip-softphone/badge.svg?branch=master)](https://coveralls.io/github/alianza-dev/java-sip-softphone?branch=master)    
 [![wercker status](https://app.wercker.com/status/c5620ebe20ac85b50f4c3cdaa83196b2/s/master "wercker status")](https://app.wercker.com/project/byKey/c5620ebe20ac85b50f4c3cdaa83196b2)    
 
+[Project Documentation](https://alianza-dev.github.io/java-sip-softphone/)      
+
+## Description
+
 Library that can be used as a sip softphone that will support basic operations
 such as
 
