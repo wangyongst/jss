@@ -30,12 +30,15 @@
         <maven-findbugs-plugin.version>3.0.1</maven-findbugs-plugin.version>
         <maven-pmd-plugin.version>3.6</maven-pmd-plugin.version>
         <maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+        <maven-checkstyle-plugin.version>2.17</maven-checkstyle-plugin.version>
 
         <jain-sip.version>1.2.1.4</jain-sip.version>
         <junit.jupiter.version>5.0.0-M2</junit.jupiter.version>
         <junit.platform.version>1.0.0-M2</junit.platform.version>
         <assertj.version>3.5.2</assertj.version>
         <javax.version>1</javax.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
     </properties>
 
     <dependencies>
@@ -53,6 +56,18 @@
             <groupId>javax.sip</groupId>
             <artifactId>jain-sip-ri</artifactId>
             <version>${jain-sip.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
 
         <!-- Test -->
@@ -148,6 +163,19 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <!-- Can't use until the wercker base java 8 image includes javadoc executable -->

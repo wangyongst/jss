@@ -35,3 +35,10 @@ entry:
 
 
 
+## References
+
+* [Jain Sip PDF Slides](http://www.oracle.com/technetwork/java/jain-sip-tutorial-149998.pdf)    
+* [jain-sip SDP Test](https://github.com/rkday/jain-sip/blob/master/branches/3263-support/src/test/gov/nist/javax/sdp/parser/SdpParserTest.java)    
+* [jain-sip Simple Call Setup](https://github.com/usnistgov/jsip/blob/master/src/examples/android/simplecallsetup/Shootist.java)    
+* [Sip Registration using Jain](http://vkslabs.com/sip-register-request-using-jain-sip/)     
+* [Jain sip for Android Example](https://github.com/RestComm/restcomm-android-sdk/tree/b1f1e7309b1f1a1d7e9aa8d5aad7b842d8691371/Examples/JAIN%20SIP)  

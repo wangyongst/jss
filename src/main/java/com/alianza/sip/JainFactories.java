@@ -32,7 +32,9 @@ public class JainFactories {
     }
 
     private SipFactory createSipFactory() {
-        return SipFactory.getInstance();
+        SipFactory factory = SipFactory.getInstance();
+        factory.setPathName("gov.nist");
+        return factory;
     }
 
     public HeaderFactory headerFactory() throws JainWrappedException {
